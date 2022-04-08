@@ -1,0 +1,272 @@
+body {
+    background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
+}
+
+input.one::-webkit-input-placeholder {
+    color: white;
+}
+
+@media only screen and (max-width: 1600px) and (min-width: 1151px) {
+    img.one {
+        position: relative;
+        width: 400px;
+        height: 390px;
+        top: 190px;
+        left: 150px;
+    }
+
+    form {
+        position: relative;
+        float: right;
+        width: 374px;
+        height: 364px;
+        right: 150px;
+        top: 205px;
+        border-radius: 20px;
+        border-style: solid;
+        border-color: white;
+    }
+
+    h1 {
+        font-family: monospace;
+        font-size: 35px;
+        margin-top: 65px;
+        margin-bottom: 10px;
+        text-align: center;
+        color: white;
+    }
+
+    input.one {
+        background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
+        color: white;
+        font-family: monospace;
+        font-size: 16px;
+        margin-top: 30px;
+        padding: 5px 90px 5px 5px;
+        border-radius: 5px;
+        border-style: solid;
+        border-color: white;
+    }
+
+    input.two {
+
+        background-color: white;
+        color: black;
+        margin-top: 30px;
+        padding: 5px 50px 5px 50px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    input.two:hover {
+        background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
+        color: white;
+        border-color: white;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+@media only screen and (max-width: 1150px) and (min-width: 951px) {
+    img.one {
+        width: 400px;
+        margin: 150px 0px;
+        margin-left: 60px;
+    }
+
+    form {
+        position: relative;
+        display: block;
+        float: right;
+        margin-top: -540px;
+        margin-right: 30px;
+        margin-left: 630px;
+        min-width: 370px;
+        height: 370px;
+        border-radius: 20px;
+        border-style: solid;
+        border-color: white;
+    }
+
+    h1 {
+        font-family: monospace;
+        font-size: 35px;
+        margin-top: 35px;
+        margin-bottom: 40px;
+        text-align: center;
+        color: white;
+    }
+
+    input.one {
+        background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
+        color: white;
+        font-family: monospace;
+        font-size: 16px;
+        margin: 0px auto;
+
+        margin: 20px 10px 15px 10px;
+        padding: 5px 100px 5px 10px;
+        border-radius: 5px;
+        border-style: solid;
+        border-color: white;
+    }
+
+    input.two {
+
+        background-color: white;
+        color: black;
+        margin-top: 10px;
+        padding: 5px 50px 5px 50px;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+
+    input.two:hover {
+        background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
+        color: white;
+        border-color: white;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+@media only screen and (max-width: 1150px) and (min-width: 951px) and (max-height: 510px) {
+    img.one {
+        width: 300px;
+        margin: 100px 0px;
+        margin-left: 60px;
+    }
+
+    form {
+        position: relative;
+        display: block;
+        float: right;
+        margin-top: -390px;
+        margin-right: 30px;
+        margin-left: 630px;
+        min-width: 280px;
+        height: 270px;
+        border-radius: 20px;
+        border-style: solid;
+        border-color: white;
+    }
+
+    h1 {
+        font-family: monospace;
+        font-size: 30px;
+        margin-top: 25px;
+        margin-bottom: 4px;
+        text-align: center;
+        color: white;
+    }
+
+    input.one {
+        background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
+        color: white;
+        font-family: monospace;
+        font-size: 16px;
+        margin: 0px auto;
+
+        margin: 20px 10px 15px 10px;
+        padding: 5px 40px 5px 10px;
+        border-radius: 5px;
+        border-style: solid;
+        border-color: white;
+    }
+
+    input.two {
+        background-color: white;
+        color: black;
+        margin-top: 0px;
+        padding: 5px 50px 5px 50px;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+
+    input.two:hover {
+        background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
+        color: white;
+        border-color: white;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    img.one {
+        display: block;
+        margin: 0px auto;
+        width: 100px;
+        height: 100px;
+        padding-bottom: 20px;
+    }
+
+    h1 {
+        font-family: monospace;
+        font-size: 35px;
+        margin-top: 65px;
+        margin-bottom: 30px;
+        text-align: center;
+        color: white;
+    }
+
+    form {
+        position: relative;
+        left: 0%;
+        top: 1%;
+        margin-left: 35px;
+        margin-right: 30px;
+        min-width: 400px;
+        min-height: 400px;
+        width: calc(100% - 220px);
+        border-radius: 20px;
+        border-style: solid;
+        border-color: white;
+    }
+
+    input.one {
+        background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
+        color: white;
+        font-family: monospace;
+        font-size: 16px;
+        margin: 0px auto;
+
+        margin: 20px 30px 20px 30px;
+        padding: 5px 90px 5px 5px;
+        border-radius: 5px;
+        border-style: solid;
+        border-color: white;
+    }
+
+    input.two {
+
+        background-color: white;
+        color: black;
+        margin-top: 30px;
+        padding: 5px 50px 5px 50px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    input.two:hover {
+        background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
+        color: white;
+        border-color: white;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+

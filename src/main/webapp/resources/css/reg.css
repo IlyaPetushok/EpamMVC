@@ -1,0 +1,214 @@
+body {
+    background-image: url("../background_body.png");
+}
+
+img.one {
+    top: 100px;
+    position: relative;
+    left: 732px;
+    width: 50px;
+    height: 50px;
+}
+
+img.two {
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    width: 150px;
+}
+
+fieldset {
+    position: relative;
+    top: 100px;
+    left: 400px;
+    border-radius: 10px;
+    width: 700px;
+    height: 360px;
+}
+
+legend {
+    font-family: monospace;
+    font-size: 50px;
+    margin: 0px auto;
+    color: white;
+}
+
+label {
+    color: white;
+}
+
+.image-upload > input {
+    /*    чтобы кнопка не отоброжалась*/
+    display: none;
+
+}
+
+input.one {
+    background-image: url("../background_body.png");
+    position: relative;
+    bottom: 230px;
+    left: 210px;
+    margin: 0px 20px 20px 13px;
+    padding: 5px 10px 5px 5px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: white;
+    color: white;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+input.three {
+    background-image: url("../background_body.png");
+    position: relative;
+    bottom: 285px;
+    left: 210px;
+    margin: 91px 20px 0px 13px;
+    padding: 5px 10px 5px 5px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: white;
+    color: white;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+label.one {
+    border-style: solid;
+    padding: 5px 5px 5px 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+
+}
+
+div.one {
+    position: relative;
+    bottom: 459px;
+    left: 460px;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+input::-webkit-input-placeholder {
+    color: white;
+}
+
+.radio_buttons {
+    margin-top: -51.5px;
+    margin-left: 20px;
+    font-size: 16px;
+    font-family: monospace;
+}
+
+.radio_buttons div {
+    float: left;
+}
+
+.radio_buttons input {
+    position: absolute;
+    left: -9999px;
+}
+
+.radio_buttons label {
+    display: block;
+    padding: 5px 20px 5px 16px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+}
+
+.radio_buttons input:checked + label {
+    background-image: url("../background_body.png");
+    color: white;
+}
+
+.radio_buttons div:first-child label {
+    margin-left: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.radio_buttons div:last-child label {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+input.two {
+    background-image: url("../background_body.png");
+    position: relative;
+    bottom: 283px;
+    left: 450px;
+    margin: 0px 20px 20px 30px;
+    padding: 5px 10px 5px 5px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: white;
+    color: white;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+div.two {
+    position: relative;
+    bottom: 371px;
+    left: 257px;
+}
+
+select {
+    background-image: url("../background_body.png");
+    color: white;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+    font-family: monospace;
+    font-size: 16px;
+    /*    для того чтоб убрать стрелку с select */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 5px 15px 5px 15px;
+}
+
+select:focus {
+    background-image: url("../background_body.png");
+    color: black;
+}
+
+select.one {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin: 0px 0px 0px 0px;
+}
+
+select.two {
+    margin: 0px -10px 0px -9px;
+}
+
+select.three {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin: 0px 5px 0px 5px;
+}
+
+input.button {
+    position: relative;
+    bottom: 250px;
+    left: 580px;
+    color: black;
+    background-color: white;
+    border-style: solid;
+    border-color: white;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 10px;
+}
+
+input.button:hover {
+    background-image: url("../background_body.png");
+    color: white;
+}
