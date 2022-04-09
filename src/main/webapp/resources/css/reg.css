@@ -1,5 +1,5 @@
 body {
-    background-image: url("../background_body.png");
+    background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
 }
 
 img.one {
@@ -46,7 +46,7 @@ label {
 }
 
 input.one {
-    background-image: url("../background_body.png");
+    background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
     position: relative;
     bottom: 230px;
     left: 210px;
@@ -61,7 +61,7 @@ input.one {
 }
 
 input.three {
-    background-image: url("../background_body.png");
+    background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
     position: relative;
     bottom: 285px;
     left: 210px;
@@ -123,7 +123,7 @@ input::-webkit-input-placeholder {
 }
 
 .radio_buttons input:checked + label {
-    background-image: url("../background_body.png");
+    background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
     color: white;
 }
 
@@ -139,7 +139,7 @@ input::-webkit-input-placeholder {
 }
 
 input.two {
-    background-image: url("../background_body.png");
+    background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
     position: relative;
     bottom: 283px;
     left: 450px;
@@ -160,7 +160,7 @@ div.two {
 }
 
 select {
-    background-image: url("../background_body.png");
+    background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
     color: white;
     border-style: solid;
     border-color: white;
@@ -175,7 +175,7 @@ select {
 }
 
 select:focus {
-    background-image: url("../background_body.png");
+    background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
     color: black;
 }
 
@@ -209,6 +209,6 @@ input.button {
 }
 
 input.button:hover {
-    background-image: url("../background_body.png");
+    background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
     color: white;
 }

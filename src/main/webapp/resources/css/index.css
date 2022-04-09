@@ -42,6 +42,7 @@ input.one::-webkit-input-placeholder {
         font-family: monospace;
         font-size: 16px;
         margin-top: 30px;
+        margin-bottom: 5px;
         padding: 5px 90px 5px 5px;
         border-radius: 5px;
         border-style: solid;
@@ -52,7 +53,7 @@ input.one::-webkit-input-placeholder {
 
         background-color: white;
         color: black;
-        margin-top: 30px;
+        margin-top: 25px;
         padding: 5px 50px 5px 50px;
         border-radius: 5px;
         margin-bottom: 10px;
@@ -67,6 +68,13 @@ input.one::-webkit-input-placeholder {
     a {
         text-decoration: none;
         color: white;
+    }
+
+    label {
+        font-family: monospace;
+        color: white;
+        margin-top: 30px;
+        padding: 5px 50px 5px 50px;
     }
 }
 
@@ -221,7 +229,7 @@ input.one::-webkit-input-placeholder {
 
     form {
         position: relative;
-        left: 0%;
+        left 0%;
         top: 1%;
         margin-left: 35px;
         margin-right: 30px;
@@ -266,6 +274,13 @@ input.one::-webkit-input-placeholder {
     a {
         text-decoration: none;
         color: white;
+    }
+
+    label {
+        font-family: monospace;
+        color: white;
+        margin-top: 10px;
+        padding: 10px 50px 10px 50px;
     }
 }
 

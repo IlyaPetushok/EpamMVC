@@ -9,10 +9,12 @@
 <html>
 <head>
     <title>Регистрация</title>
-    <link type="text/css" href="../resources/css/reg.css" rel="stylesheet">
+    <style>
+        <%@include file="../resources/css/reg.css" %>
+    </style>
 </head>
 <img class="one" src="<%=request.getContextPath()%>/resources/logGrsu.png">
-<form action="welcom" method="post">
+<form action="reg">
     <fieldset>
         <legend>Регистрация</legend>
 
@@ -23,15 +25,15 @@
             </label>
             <input id="file-input" type="file"/>
         </div>
+        <input type="hidden" name="command" value="add_user">
 
-
-        <input class=one type="text" required=reqired placeholder="Имя">
+        <input class=one type="text" name="name" required=reqired placeholder="ФИО">
         <br>
-        <input class=three type="text" required=required
-               placeholder="Фамилия">
+        <input class=three type="text" name="login" required=required
+               placeholder="login">
         <br>
-        <input class=one type="text" required=required
-               placeholder="Отчество">
+        <input class=one type="password" name="password" required=required
+               placeholder="password">
         <br>
         <input class="two" type="email" required placeholder="email">
         <div class=one>
@@ -63,6 +65,7 @@
                 <option>Год</option>
             </select>
         </div>
+<%--        <a href="reg" class="button">Регистрация</a>--%>
         <input class="button" type="submit" value="Регистрация">
 
     </fieldset>

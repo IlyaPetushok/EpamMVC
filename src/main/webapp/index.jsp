@@ -6,19 +6,21 @@
     <style>
         <%@include file="resources/css/index.css" %>
     </style>
-    <link type="text/css" href="src/main/webapp/pages/css/index.css" rel="stylesheet">
 </head>
 <body>
 <img class=one src="<%=request.getContextPath()%>/resources/logGrsu.png" alt="Эмблема Гргу им.Янки Купалы "
      title="Гргу имени Янки Купалы">
 </body>
-<form action="welcom" method="post">
+<form action="home">
     <h1>Авторизация</h1>
     <center>
-        <input class=one type=text required=required placeholder="Логин">
+        <input type="hidden" name="command" value="input_user">
+        <input class=one type=text name="login" required=required placeholder="Логин">
         <br>
-        <input class=one type=password required=required
+        <input class=one type=password name="password" required=required
                placeholder="Пароль">
+        <br>
+        <label>${error}</label>
         <br>
         <input class=two type="submit" value="Войти">
         <br>
