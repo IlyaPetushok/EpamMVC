@@ -12,8 +12,9 @@
 </head>
 <body>
 <h1>Hello </h1>
-${name}
-${login}
-${password}
+<label>Name:</label>${name}
+<label>Sex:</label>${sex}
+<label>Email:</label>${email}
+<label>Data:</label>${data}
 </body>
 </html>

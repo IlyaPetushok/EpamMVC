@@ -1,0 +1,14 @@
+body {
+    background-image: url("<%=request.getContextPath()%>/resources/error_back.png");
+}
+
+h1 {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    font-size: 45px;
+    margin-top: 320px;
+    margin-left: 600px;
+    border-radius: 7px;
+    padding: 10px;
+}

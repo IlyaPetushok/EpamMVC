@@ -35,23 +35,23 @@
         <input class=one type="password" name="password" required=required
                placeholder="password">
         <br>
-        <input class="two" type="email" required placeholder="email">
+        <input class="two" type="email" name="email" required placeholder="email">
         <div class=one>
 
-            <div class="radio_buttons">
+            <div class="radio_buttons" >
                 <div>
-                    <input type="radio" name="sex" id="man" checked/>
-                    <label for="man">Мужской</label>
+                    <input type="radio" name="sex" id="man" value="man" checked/>
+                    <label for="man" >Мужской</label>
                 </div>
                 <div>
-                    <input type="radio" name="sex" id="woman"/>
+                    <input type="radio" name="sex" id="woman" value="woman"/>
                     <label for="woman">Женский</label>
                 </div>
             </div>
 
         </div>
         <div class=two>
-            <select class=one name=day>
+            <select class=one name=data>
                 <option value=month>
                     День
                 </option>
