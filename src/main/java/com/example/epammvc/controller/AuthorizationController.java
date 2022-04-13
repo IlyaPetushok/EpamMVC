@@ -1,6 +1,7 @@
 package com.example.epammvc.controller;
 
 import java.io.*;
+import java.sql.SQLException;
 
 import com.example.epammvc.command.Command;
 import com.example.epammvc.command.CommandType;
@@ -18,7 +19,12 @@ public class AuthorizationController extends HttpServlet {
         response.setContentType("text/html");
         String commandStr = request.getParameter("command");
         Command command = CommandType.getCommand(commandStr);
-        String page = command.execute(request);
+        String page = null;
+        try {
+            page = command.execute(request);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         System.out.println("page" + page);
         request.getRequestDispatcher(page).forward(request, response);
     }
