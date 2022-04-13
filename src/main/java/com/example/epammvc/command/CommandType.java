@@ -11,12 +11,13 @@ public enum CommandType {
 
     Command command;
 
-    CommandType(Command command){
-        this.command=command;
+    CommandType(Command command) {
+        this.command = command;
     }
 
-    public static Command getCommand(String commandStr){
-        CommandType commandType=CommandType.valueOf(commandStr.toUpperCase());
+    public static Command getCommand(String commandStr) {
+        //valid
+        CommandType commandType = CommandType.valueOf(commandStr.toUpperCase());
         return commandType.command;
     }
 }
