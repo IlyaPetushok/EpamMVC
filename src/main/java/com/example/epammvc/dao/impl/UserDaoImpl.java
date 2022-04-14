@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.Properties;
 
 public class UserDaoImpl extends BaseDao<User> implements UserDao {
+    private static final String SELECT_LOGIN_AND_PASSWORD = "Select * FROM info_user WHERE login = ? and password=?";
+    private static final String INSERT_USER= "INSERT INTO info_user(name,login,password,sex,email,data) VALUES (?,?,?,?,?,?);";
     private static UserDaoImpl instance = new UserDaoImpl();
 
     private UserDaoImpl() {
@@ -26,26 +28,29 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
 
     @Override
     public boolean insert(User user) throws SQLException {
-        Statement statement = ConnectSQL();
+        PreparedStatement statement = ConnectSQL(INSERT_USER);
         String name = user.getName();
         String login = user.getLogin();
         String password = user.getPassword();
         String sex = user.getSex();
         String email = user.getEmail();
         String data = user.getData();
-        @Language("SQL")
-        String sqlCommand = "INSERT INTO info_user(name,login,password,sex,email,data) VALUES (" + "'" + name + "'" + ",'" + login + "'"
-                + ",'" + password + "'" + ",'" + sex + "'" + ",'" + email + "'" + ",'" + data + "'" + ");";
-        statement.executeUpdate(sqlCommand);
+        statement.setString(1,name);
+        statement.setString(2,login);
+        statement.setString(3,password);
+        statement.setString(4,sex);
+        statement.setString(5,email);
+        statement.setString(6,data);
+        statement.executeUpdate();
         return true;//fix me
     }
 
     @Override
     public User authenticate(String login, String password) throws SQLException {
-        Statement statement = ConnectSQL();
-        @Language("SQL")
-        String SqlCommand = "Select * FROM info_user WHERE login='" + login + "'" + "and password=" + "'" + password + "';";
-        ResultSet resultSet = statement.executeQuery(SqlCommand);
+        PreparedStatement statement = ConnectSQL(SELECT_LOGIN_AND_PASSWORD);
+        statement.setString(1,login);
+        statement.setString(2,password);
+        ResultSet resultSet = statement.executeQuery();
         int id = 0;
         String name = null;
         String email = null;
@@ -61,15 +66,15 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
         return new User(id, name, sex, data, email);
     }
 
-    private Statement ConnectSQL() {
-        Statement statement = null;
+    private PreparedStatement ConnectSQL(String sqlCommand) {
+        PreparedStatement statement = null;
         Properties properties = loadProperties();
         String databaseUrl = (String) properties.get("db.url");
         String databaseUser = (String) properties.get("user");
         String databasePassword = (String) properties.get("password");
         try {
             Connection connection = DriverManager.getConnection(databaseUrl, databaseUser, databasePassword);
-            statement = connection.createStatement();
+            statement = connection.prepareStatement(sqlCommand);
         } catch (SQLException exception) {
             //logger
         }
