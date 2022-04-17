@@ -5,6 +5,8 @@ import java.sql.SQLException;
 
 import com.example.epammvc.command.Command;
 import com.example.epammvc.command.CommandType;
+import com.example.epammvc.exception.CommandException;
+import com.example.epammvc.pool.ConnectionBuilder;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -15,20 +17,24 @@ public class AuthorizationController extends HttpServlet {
     public void init() {
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         String commandStr = request.getParameter("command");
         Command command = CommandType.getCommand(commandStr);
         String page = null;
         try {
             page = command.execute(request);
-        } catch (SQLException e) {
-            e.printStackTrace();
+            request.getRequestDispatcher(page).forward(request, response);
+
+        } catch (CommandException exception) {
+            request.setAttribute("error",exception);
+            request.getRequestDispatcher("pages/error/error_500.jsp").forward(request, response);
+            throw new ServletException(exception);
         }
         System.out.println("page" + page);
-        request.getRequestDispatcher(page).forward(request, response);
     }
 
     public void destroy() {
+        ConnectionBuilder.getInstance().destroyPool();
     }
 }

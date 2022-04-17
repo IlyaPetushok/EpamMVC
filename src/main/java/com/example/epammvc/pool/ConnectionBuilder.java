@@ -52,7 +52,7 @@ public class ConnectionBuilder {
             while (freeConnection.size() == 0) {
                 condition.await();
             }
-            connection = freeConnection.take();
+            connection = freeConnection.poll();
         } catch (InterruptedException exception) {
             //logger
         } finally {
@@ -71,6 +71,15 @@ public class ConnectionBuilder {
         } finally {
             lock.unlock();
         }
+    }
+
+    public void destroyPool() {
+        try {
+            freeConnection.take().close();
+        } catch (SQLException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public static ConnectionBuilder getInstance() {

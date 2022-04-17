@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import com.example.epammvc.command.Command;
 import com.example.epammvc.command.CommandType;
+import com.example.epammvc.exception.CommandException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -21,8 +22,8 @@ public class RegistrationController extends HttpServlet {
         String page = null;
         try {
             page = command.execute(request);
-        } catch (SQLException e) {
-            e.printStackTrace();
+        }catch (CommandException exception) {
+            throw new ServletException(exception);
         }
         request.getRequestDispatcher(page).forward(request, response);
     }
