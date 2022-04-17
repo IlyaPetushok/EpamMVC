@@ -2,7 +2,30 @@ body {
     background-image: url("<%=request.getContextPath()%>/resources/error_back.png");
 }
 
-h1 {
+h1.one{
+    display: inline-block;
+    background-color: black;
+    color: white;
+    font-size: 45px;
+    margin-top: 320px;
+    margin-left: 600px;
+    border-radius: 7px;
+    padding: 10px;
+}
+h1.two{
+    display: inline-block;
+    background-color: black;
+    color: white;
+    font-size: 45px;
+    margin-top: 270px;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+
+p{
     display: inline-block;
     background-color: black;
     color: white;

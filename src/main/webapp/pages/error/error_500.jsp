@@ -10,8 +10,12 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        <%@include file="/resources/css/error_404.css" %>
+    </style>
 </head>
 <body>
-    <h1>ERROR500</h1>
+    <h1 class="two"><center>ERROR500</center>${error}</h1>
+<%--    <p>${error}</p>--%>
 </body>
 </html>

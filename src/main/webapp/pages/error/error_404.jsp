@@ -14,6 +14,6 @@
     </style>
 </head>
 <body>
-    <h1>ERROR404</h1>
+    <h1 class="one">ERROR404</h1>
 </body>
 </html>
