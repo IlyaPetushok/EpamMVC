@@ -36,7 +36,7 @@ public class RegisterCommand implements Command {
                 page = "pages/reg.jsp";
             }
         } catch (ServiceException exception) {
-            throw new CommandException("Error in registrationCommand",exception);
+            throw new CommandException("Error in registrationCommand", exception);
         }
         return page;
     }
