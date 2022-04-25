@@ -24,8 +24,7 @@ public class AuthorizationController extends HttpServlet {
         String page = null;
         try {
             page = command.execute(request);
-            request.getRequestDispatcher(page).forward(request, response);
-
+            response.sendRedirect(request.getContextPath()+page);
         } catch (CommandException exception) {
             request.setAttribute("error",exception);
             request.getRequestDispatcher("pages/error/error_500.jsp").forward(request, response);
