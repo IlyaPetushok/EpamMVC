@@ -9,6 +9,7 @@ import com.example.epammvc.security.Sha1;
 import com.example.epammvc.service.UserService;
 import com.example.epammvc.service.impl.UserServiceImpl;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 import java.sql.SQLException;
 
@@ -24,27 +25,28 @@ public class AuthorizationCommand implements Command {
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         UserService userService = UserServiceImpl.getInstance();
-        String page;
+        String page = null;
         String login = request.getParameter(LOGIN);
         String password = request.getParameter(PASSWORD);
         User user = null;
+        HttpSession session = request.getSession();
         try {
             user = userService.authorization(login, password);
         } catch (ServiceException exception) {
-            throw new CommandException("Error in AuthorizationCommand",exception);
+            throw new CommandException("Error in AuthorizationCommand", exception);
         }
+        //для тобо чтобы знать с какой страницы пришли
+        session.setAttribute("current_page", page);
         if (user.getId() != 0) {
-            request.setAttribute(NAME, user.getName());
-            request.setAttribute(SEX, user.getSex());
-            request.setAttribute(EMAIL, user.getEmail());
-            request.setAttribute(DATA, user.getData());
-            page = "pages/input.jsp";
+            session.setAttribute(NAME, user.getName());
+            session.setAttribute(SEX, user.getSex());
+            session.setAttribute(EMAIL, user.getEmail());
+            session.setAttribute(DATA, user.getData());
+            page = "/pages/input.jsp";
         } else {
-            request.setAttribute("error", "Wrong login or password");
-            page = "index.jsp";
+            session.setAttribute("error", "Wrong login or password");
+            page = "/index.jsp";
         }
-        Sha1 sha1=new Sha1();
-        sha1.cipher("login");
         return page;
     }
 }
