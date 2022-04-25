@@ -283,5 +283,64 @@ input.one::-webkit-input-placeholder {
         padding: 10px 50px 10px 50px;
     }
 }
+@media only screen and (max-device-width: 600px) {
+    img.one{
+        display: block;
+        margin: 0px auto;
+        width: 100px;
+        height: 100px;
+        padding-bottom: 20px;
+    }
+    h1{
+        font-family:monospace;
+        font-size:60px;
+        margin-top: 65px;
+        margin-bottom: 105px;
+        text-align: center;
+        color:white;
+    }
+    form{
+        position: absolute;
+        right: 5%;
+        top:55%;
+        min-width: 800px;
+        min-height:800px;
+        border-radius:20px;
+        border-width: 4px;
+        border-style: solid;
+        border-color:white;
+    }
+    input.one{
+        background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
+        color: white;
+        font-family:monospace;
+        font-size: 30px;
+        margin: 40px auto;
+        padding: 25px 250px 25px 25px;
+        border-radius: 12px;
+        border-width: 4px;
+        border-style: solid;
+        border-color: white;
+    }
+    input.two{
+        font-size:30px;
+        background-color: white;
+        color:black;
+        margin-top: -15px;
+        padding: 25px 120px 25px 120px;
+        border-radius: 15px;
+        margin-bottom: 35px;
+    }
+    input.two:hover{
+        background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
+        color:white;
+        border-color: white;
+    }
+    a{
+        font-size: 30px;
+        text-decoration: none;
+        color:white;
+    }
+}
 
 
