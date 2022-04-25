@@ -3,7 +3,7 @@ package com.example.epammvc.command.impl;
 import com.example.epammvc.command.Command;
 import jakarta.servlet.http.HttpServletRequest;
 
-public class Default implements Command {
+public class DefaultCommand implements Command {
     private static final String HOMEPAGE = "index.jsp";
 
     @Override

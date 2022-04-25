@@ -1,13 +1,15 @@
 package com.example.epammvc.command;
 
 import com.example.epammvc.command.impl.AuthorizationCommand;
-import com.example.epammvc.command.impl.Default;
+import com.example.epammvc.command.impl.DefaultCommand;
+import com.example.epammvc.command.impl.LogoutCommand;
 import com.example.epammvc.command.impl.RegisterCommand;
 
 public enum CommandType {
     ADD_USER(new RegisterCommand()),
     INPUT_USER(new AuthorizationCommand()),
-    DEFAULT(new Default());
+    DEFAULT(new DefaultCommand()),
+    LOGOUT(new LogoutCommand());
 
     Command command;
 
