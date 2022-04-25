@@ -15,6 +15,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class ConnectionBuilder {
+    //deregisterDriver
     private static final ReentrantLock lock = new ReentrantLock(true);
     private static final Condition condition = lock.newCondition();
     private static final CountDownLatch initializingLatch = new CountDownLatch(1);
@@ -30,6 +31,7 @@ public class ConnectionBuilder {
             Class.forName(driverName);
         } catch (ClassNotFoundException exception) {
             //logger
+            throw new ExceptionInInitializerError(exception);
         }
     }
 
