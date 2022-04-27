@@ -1,6 +1,7 @@
 package com.example.epammvc.command.impl;
 
 import com.example.epammvc.command.Command;
+import com.example.epammvc.controller.Router;
 import com.example.epammvc.exception.CommandException;
 import com.example.epammvc.exception.ServiceException;
 import com.example.epammvc.security.CaptchaVerif;
@@ -16,7 +17,9 @@ public class RegisterCommand implements Command {
     private static final String DATA = "data";
 
     @Override
-    public String execute(HttpServletRequest request) throws CommandException {
+    public Router execute(HttpServletRequest request) throws CommandException {
+        Router router = new Router();
+        router.setRedirect();
         String page;
         String name = request.getParameter(NAME);
         String login = request.getParameter(LOGIN);
@@ -27,21 +30,23 @@ public class RegisterCommand implements Command {
         String gRecaptchaResponse = request.getParameter("g-recaptcha-response");
         Boolean cheake = CaptchaVerif.verify(gRecaptchaResponse);
         if (!cheake) {
-            request.setAttribute("error","Your need use captcha");
-            return "/pages/reg.jsp";
-        }
-        UserServiceImpl userService = UserServiceImpl.getInstance();
-        try {
-            if (userService.registration(name, login, password, sex, email, data)) {
-                page = "/";
-            } else {
-                //add error on reg.html
-                request.setAttribute("error","login or email is busy");
-                page = "/pages/reg.jsp";
+            request.setAttribute("error", "Your need use captcha");
+            page = "/pages/reg.jsp";
+        } else {
+            UserServiceImpl userService = UserServiceImpl.getInstance();
+            try {
+                if (userService.registration(name, login, password, sex, email, data)) {
+                    page = "/";
+                } else {
+                    //add error on reg.html
+                    request.setAttribute("error", "login or email is busy");
+                    page = "/pages/reg.jsp";
+                }
+            } catch (ServiceException exception) {
+                throw new CommandException("Error in registrationCommand", exception);
             }
-        } catch (ServiceException exception) {
-            throw new CommandException("Error in registrationCommand", exception);
         }
-        return page;
+        router.setPage(page);
+        return router;
     }
 }

@@ -1,17 +1,14 @@
 package com.example.epammvc.command.impl;
 
 import com.example.epammvc.command.Command;
+import com.example.epammvc.controller.Router;
 import com.example.epammvc.entity.User;
 import com.example.epammvc.exception.CommandException;
-import com.example.epammvc.exception.DaoException;
 import com.example.epammvc.exception.ServiceException;
-import com.example.epammvc.security.Sha1;
 import com.example.epammvc.service.UserService;
 import com.example.epammvc.service.impl.UserServiceImpl;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
-
-import java.sql.SQLException;
 
 
 public class AuthorizationCommand implements Command {
@@ -23,7 +20,9 @@ public class AuthorizationCommand implements Command {
     private static final String DATA = "data";
 
     @Override
-    public String execute(HttpServletRequest request) throws CommandException {
+    public Router execute(HttpServletRequest request) throws CommandException {
+        Router router=new Router();
+        router.setRedirect();
         UserService userService = UserServiceImpl.getInstance();
         String page = null;
         String login = request.getParameter(LOGIN);
@@ -47,6 +46,7 @@ public class AuthorizationCommand implements Command {
             session.setAttribute("error", "Wrong login or password");
             page = "/index.jsp";
         }
-        return page;
+        router.setPage(page);
+        return router;
     }
 }
