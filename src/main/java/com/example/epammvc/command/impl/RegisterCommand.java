@@ -2,13 +2,10 @@ package com.example.epammvc.command.impl;
 
 import com.example.epammvc.command.Command;
 import com.example.epammvc.exception.CommandException;
-import com.example.epammvc.exception.DaoException;
 import com.example.epammvc.exception.ServiceException;
-import com.example.epammvc.service.UserService;
+import com.example.epammvc.security.CaptchaVerif;
 import com.example.epammvc.service.impl.UserServiceImpl;
 import jakarta.servlet.http.HttpServletRequest;
-
-import java.sql.SQLException;
 
 public class RegisterCommand implements Command {
     private static final String NAME = "name";
@@ -27,13 +24,20 @@ public class RegisterCommand implements Command {
         String sex = request.getParameter(SEX);
         String email = request.getParameter(EMAIL);
         String data = request.getParameter(DATA);
+        String gRecaptchaResponse = request.getParameter("g-recaptcha-response");
+        Boolean cheake = CaptchaVerif.verify(gRecaptchaResponse);
+        if (!cheake) {
+            request.setAttribute("error","Your need use captcha");
+            return "/pages/reg.jsp";
+        }
         UserServiceImpl userService = UserServiceImpl.getInstance();
         try {
             if (userService.registration(name, login, password, sex, email, data)) {
                 page = "/";
             } else {
                 //add error on reg.html
-                page = "pages/reg.jsp";
+                request.setAttribute("error","login or email is busy");
+                page = "/pages/reg.jsp";
             }
         } catch (ServiceException exception) {
             throw new CommandException("Error in registrationCommand", exception);
