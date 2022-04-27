@@ -2,37 +2,86 @@ body {
     background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
 }
 
-@media only screen and (max-width: 1600px) and (min-width: 1151px) {
+@media only screen and (max-width: 1600px) and (min-width: 700px) {
     img.one {
-        top: 100px;
-        position: relative;
-        left: 732px;
+        position: absolute;
+        left: 50%;
         width: 50px;
         height: 50px;
     }
 
-    img.two {
-        border-radius: 5px;
+    .all {
+        /*border-color: white;*/
+        /*border-style: solid;*/
+        /*border-width: 4px;*/
+        display: flex;
+        align-items: flex-start;
         margin-left: 20px;
         margin-right: 20px;
-        margin-bottom: 20px;
-        margin-top: 30px;
+    }
+
+    .up {
+        /*border-color: white;*/
+        /*border-style: solid;*/
+        /*border-width: 4px;*/
+        display: flex;
+        align-items: flex-start;
+        margin-left: 20px;
+        margin-right: 20px
+    }
+
+    .down {
+        /*display: flex;*/
+        /*align-items: flex-start;*/
+        /*border-width: 4px;*/
+        /*border-style: solid;*/
+        /*border-color: white;*/
+        /*width: 35%;*/
+    }
+
+    .left_up {
+        /*border-style: solid;*/
+        /*border-color: white;*/
+        /*border-width: 4px;*/
+    }
+
+    .right_up {
+        margin-left: 40px;
+        margin-right: 20px
+        /*border-style: solid;*/
+        /*border-color: white;*/
+        /*border-width: 4px;*/
+        /*width: 100%;*/
+        /*float: right;*/
+    }
+
+    img.two {
+        border-radius: 5px;
+        /*margin-left: 20px;*/
+        /*margin-right: 20px;*/
+        /*margin-bottom: 20px;*/
+        /*margin-top: 30px;*/
         width: 150px;
     }
 
     fieldset {
-        position: relative;
-        top: 100px;
-        left: 400px;
+        position: absolute;
+        top: 25%;
+        left: 27%;
+        /*top: 100px;*/
+        /*left: 400px;*/
         border-radius: 10px;
-        width: 700px;
-        height: 360px;
+        /*width: 700px;*/
+        /*height: 360px;*/
     }
 
     legend {
         font-family: monospace;
         font-size: 50px;
         margin: 0px auto;
+        color: white;
+    }
+    .error{
         color: white;
     }
 
@@ -43,16 +92,16 @@ body {
     .image-upload > input {
         /*    чтобы кнопка не отоброжалась*/
         display: none;
-
     }
 
     input.one {
         background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
-        position: relative;
-        bottom: 230px;
-        left: 210px;
-        margin: 0px 20px 20px 13px;
-        padding: 5px 10px 5px 5px;
+        width: 94%;
+        /*margin-left: 3%;*/
+        margin: 25px 0px 20px 3%;
+        padding: 5px 0px 5px 0px;
+        /*margin: 0px 20px 20px 13px;*/
+        /*padding: 5px 10px 5px 5px;*/
         border-radius: 5px;
         border-style: solid;
         border-color: white;
@@ -62,32 +111,33 @@ body {
     }
 
     input.three {
-        background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
-        position: relative;
-        bottom: 285px;
-        left: 210px;
-        margin: 91px 20px 0px 13px;
-        padding: 5px 10px 5px 5px;
-        border-radius: 5px;
-        border-style: solid;
-        border-color: white;
-        color: white;
-        font-family: monospace;
-        font-size: 16px;
+        /*background-image: url("<%=request.getContextPath()%>/resources/background_body.png");*/
+        /*position: relative;*/
+        /*bottom: 285px;*/
+        /*left: 210px;*/
+        /*margin: 91px 20px 0px 13px;*/
+        /*padding: 5px 10px 5px 5px;*/
+        /*border-radius: 5px;*/
+        /*border-style: solid;*/
+        /*border-color: white;*/
+        /*color: white;*/
+        /*font-family: monospace;*/
+        /*font-size: 16px;*/
     }
 
     label.one {
-        border-style: solid;
-        padding: 5px 5px 5px 5px;
-        margin-left: 0px;
-        margin-right: 0px;
+
+        /*border-style: solid;*/
+        /*padding: 5px 5px 5px 5px;*/
+        /*margin-left: 0px;*/
+        /*margin-right: 0px;*/
 
     }
 
     div.one {
-        position: relative;
-        bottom: 459px;
-        left: 460px;
+        /*position: relative;*/
+        /*bottom: 459px;*/
+        /*left: 460px;*/
         font-family: monospace;
         font-size: 16px;
     }
@@ -97,8 +147,8 @@ body {
     }
 
     .radio_buttons {
-        margin-top: -51.5px;
-        margin-left: 20px;
+        /*margin-top: -51.5px;*/
+        /*margin-left: 20px;*/
         font-size: 16px;
         font-family: monospace;
     }
@@ -114,6 +164,7 @@ body {
 
     .radio_buttons label {
         display: block;
+        margin: 25px 0px 20px 0px;
         padding: 5px 20px 5px 16px;
         background-color: white;
         color: black;
@@ -140,25 +191,26 @@ body {
     }
 
     input.two {
-        background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
-        position: relative;
-        bottom: 283px;
-        left: 450px;
-        margin: 0px 20px 20px 30px;
-        padding: 5px 10px 5px 5px;
-        border-radius: 5px;
-        border-style: solid;
-        border-color: white;
-        color: white;
-        font-family: monospace;
-        font-size: 16px;
+        /*background-image: url("<%=request.getContextPath()%>/resources/background_body.png");*/
+        /*position: relative;*/
+        /*bottom: 283px;*/
+        /*left: 450px;*/
+        /*margin: 0px 20px 20px 30px;*/
+        /*padding: 5px 10px 5px 5px;*/
+        /*border-radius: 5px;*/
+        /*border-style: solid;*/
+        /*border-color: white;*/
+        /*color: white;*/
+        /*font-family: monospace;*/
+        /*font-size: 16px;*/
     }
 
     div.two {
-        position: relative;
-        bottom: 371px;
-        left: 257px;
+        /*position: relative;*/
+        /*bottom: 371px;*/
+        /*left: 257px;*/
     }
+
 
     select {
         background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
@@ -173,45 +225,63 @@ body {
         -moz-appearance: none;
         appearance: none;
         padding: 5px 15px 5px 15px;
+        /*margin: 25px 0px 0px 20px;*/
     }
 
     select:focus {
+        /*background-color: white;*/
         background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
-        color: black;
+        color: white;
     }
+
 
     select.one {
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
-        margin: 0px 0px 0px 0px;
+        margin: 25px 0px 0px 0px;
     }
 
     select.two {
-        margin: 0px -10px 0px -9px;
+        margin: 25px -10px 0px -9px;
     }
 
     select.three {
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
-        margin: 0px 5px 0px 5px;
+        margin: 25px 5px 0px 5px;
     }
 
     input.button {
-        position: relative;
-        bottom: 250px;
-        left: 580px;
+        /*position: relative;*/
+        /*bottom: 250px;*/
+        /*left: 580px;*/
         color: black;
         background-color: white;
         border-style: solid;
         border-color: white;
         border-radius: 5px;
         padding: 5px 10px 5px 10px;
-        margin-bottom: 10px;
+        margin-left: -1%;
+        /*margin-bottom: 10px;*/
+        /*margin-left: ;*/
     }
 
     input.button:hover {
         background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
         color: white;
+    }
+
+    .buttons {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 20px;
+        margin-bottom: -30px;
+    }
+
+    .g-recaptcha {
+        margin-left: 38%;
+        transform: scale(0.40);
+        transform-origin: 0 0;
     }
 }
 
@@ -220,31 +290,36 @@ body {
         /*    чтобы кнопка не отоброжалась*/
         display: none;
     }
-    img.one{
+
+    img.one {
         display: block;
         margin: 0px auto;
         width: 100px;
         height: 100px;
         padding-bottom: 20px;
     }
+
     legend {
         font-family: monospace;
         font-size: 50px;
         margin: 0px auto;
         color: white;
     }
+
     fieldset {
         position: relative;
         border-radius: 10px;
         /*расширить границы*/
         /*margin-bottom: 30px;*/
     }
+
     img.two {
         border-radius: 5px;
         /*margin: 30px 20px 20px 20px;*/
         width: 400px;
     }
-    .up{
+
+    .up {
         margin-top: 30px;
         border-style: solid;
         border-width: 5px;
@@ -252,6 +327,7 @@ body {
         display: flex;
         align-items: flex-start;
     }
+
     .left_up {
         border-style: solid;
         border-width: 5px;
@@ -268,10 +344,10 @@ body {
         /*float: right;*/
     }
 
-    input.one{
+    input.one {
         background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
         width: 96%;
-        margin:20% 0% 2% 2%;
+        margin: 20% 0% 2% 2%;
         /*margin: 0px 20px 20px 13px;*/
         padding: 5px 10px 5px 5px;
         border-radius: 5px;
