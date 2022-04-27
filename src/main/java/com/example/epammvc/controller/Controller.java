@@ -12,7 +12,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 @WebServlet(name = "helloServlet", value = "/home")
-public class AuthorizationController extends HttpServlet {
+public class Controller extends HttpServlet {
 
     public void init() {
     }
@@ -24,6 +24,7 @@ public class AuthorizationController extends HttpServlet {
         String page = null;
         try {
             page = command.execute(request);
+//            request.getRequestDispatcher(page).forward(request,response);
             response.sendRedirect(request.getContextPath()+page);
         } catch (CommandException exception) {
             request.setAttribute("error",exception);
