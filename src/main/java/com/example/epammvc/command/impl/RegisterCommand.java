@@ -18,8 +18,6 @@ public class RegisterCommand implements Command {
 
     @Override
     public Router execute(HttpServletRequest request) throws CommandException {
-        Router router = new Router();
-        router.setRedirect();
         String page;
         String name = request.getParameter(NAME);
         String login = request.getParameter(LOGIN);
@@ -46,6 +44,7 @@ public class RegisterCommand implements Command {
                 throw new CommandException("Error in registrationCommand", exception);
             }
         }
+        Router router = new Router();
         router.setPage(page);
         return router;
     }

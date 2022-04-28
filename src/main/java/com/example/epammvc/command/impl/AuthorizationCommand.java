@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpSession;
 
 
 public class AuthorizationCommand implements Command {
-    private static final String NAME = "name";
+    private static final String NAME = "name";//отдельный класс
     private static final String LOGIN = "login";
     private static final String PASSWORD = "password";
     private static final String SEX = "sex";
@@ -21,8 +21,6 @@ public class AuthorizationCommand implements Command {
 
     @Override
     public Router execute(HttpServletRequest request) throws CommandException {
-        Router router=new Router();
-        router.setRedirect();
         UserService userService = UserServiceImpl.getInstance();
         String page = null;
         String login = request.getParameter(LOGIN);
@@ -46,6 +44,8 @@ public class AuthorizationCommand implements Command {
             session.setAttribute("error", "Wrong login or password");
             page = "/index.jsp";
         }
+        Router router=new Router();
+        router.setRedirect();
         router.setPage(page);
         return router;
     }
