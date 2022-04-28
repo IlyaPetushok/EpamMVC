@@ -2,7 +2,11 @@ body {
     background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
 }
 
-@media only screen and (max-width: 1600px) and (min-width: 700px) {
+label {
+    color: white;
+}
+
+@media only screen and (min-width: 1000px) {
     img.one {
         position: absolute;
         left: 50%;
@@ -81,13 +85,11 @@ body {
         margin: 0px auto;
         color: white;
     }
-    .error{
+
+    .error {
         color: white;
     }
 
-    label {
-        color: white;
-    }
 
     .image-upload > input {
         /*    чтобы кнопка не отоброжалась*/
@@ -283,9 +285,17 @@ body {
         transform: scale(0.40);
         transform-origin: 0 0;
     }
+
+    .error{
+        margin-left: 50%;
+        margin-top: 5%;
+        font-size: 15px;
+        font-family: monospace;
+    }
 }
 
 @media only screen and (max-device-width: 600px) {
+
     .image-upload > input {
         /*    чтобы кнопка не отоброжалась*/
         display: none;
@@ -307,6 +317,7 @@ body {
     }
 
     fieldset {
+        margin-top: 30%;
         position: relative;
         border-radius: 10px;
         /*расширить границы*/
@@ -321,25 +332,25 @@ body {
 
     .up {
         margin-top: 30px;
-        border-style: solid;
-        border-width: 5px;
-        border-color: white;
+        /*border-style: solid;*/
+        /*border-width: 5px;*/
+        /*border-color: white;*/
         display: flex;
         align-items: flex-start;
     }
 
     .left_up {
-        border-style: solid;
-        border-width: 5px;
-        border-color: white;
+        /*border-style: solid;*/
+        /*border-width: 5px;*/
+        /*border-color: white;*/
         /*width: 100px;*/
         /*float: left;*/
     }
 
     .right_up {
-        border-style: solid;
-        border-width: 5px;
-        border-color: white;
+        /*border-style: solid;*/
+        /*border-width: 5px;*/
+        /*border-color: white;*/
         width: 100%;
         /*float: right;*/
     }
@@ -353,12 +364,158 @@ body {
         border-radius: 5px;
         border-style: solid;
         border-color: white;
-        color: white;
         font-family: monospace;
         font-size: 40px;
+        color: white;
     }
 
     .down {
+        /*display: flex;*/
+        /*align-items: flex-start;*/
+        /*/ margin-top: -15%;*/
+    }
 
+    .bottom_image {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .email {
+        width: 47%;
+        float: right;
+        margin-right: 2%;
+    }
+
+    .radio_buttons {
+        /*margin-top: -51.5px;*/
+        /*margin-left: 20px;*/
+        margin-top: 13.5%;
+        font-size: 45px;
+        font-family: monospace;
+    }
+
+    .radio_buttons div {
+        float: left;
+    }
+
+    .radio_buttons input {
+        position: absolute;
+        left: -9999px;
+    }
+
+    .radio_buttons label {
+        display: block;
+        margin: 25px 0px 20px 0px;
+        padding: 4px 20px 3px 16px;
+        background-color: white;
+        color: black;
+        cursor: pointer;
+        border-style: solid;
+        border-color: white;
+        border-width: 2px;
+    }
+
+    .radio_buttons input:checked + label {
+        background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
+        color: white;
+    }
+
+    .radio_buttons div:first-child label {
+        margin-left: 0;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    .radio_buttons div:last-child label {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    input::-webkit-input-placeholder {
+        font-family: monospace;
+        color: white;
+    }
+
+    select {
+        background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
+        color: white;
+        border-style: solid;
+        border-color: white;
+        border-width: 2px;
+        font-family: monospace;
+        font-size: 45px;
+        /*    для того чтоб убрать стрелку с select */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        padding: 5px 15px 5px 15px;
+        /*margin: 25px 0px 0px 20px;*/
+    }
+
+    select:focus {
+        /*background-color: white;*/
+        background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
+        color: white;
+    }
+
+
+    select.one {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        margin: 25px 0px 0px 0px;
+    }
+
+    select.two {
+        margin: 25px -10px 0px -9px;
+    }
+
+    select.three {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        margin: 25px 5px 0px 5px;
+    }
+
+    .g-recaptcha {
+        margin-top: -7%;
+        float: right;
+        /*margin-left: 38%;*/
+        transform: scale(0.90);
+        transform-origin: 0 0;
+    }
+
+    input.button {
+        /*position: relative;*/
+        /*bottom: 250px;*/
+        /*left: 580px;*/
+        color: black;
+        font-size: 40px;
+        background-color: white;
+        border-style: solid;
+        border-color: white;
+        border-radius: 5px;
+        padding: 5px 10px 5px 10px;
+        margin-left: 35%;
+        margin-top: 5%;
+        font-family: monospace;
+        /*margin-left: ;*/
+    }
+
+    input.button:hover {
+        background-image: url("<%=request.getContextPath()%>/resources/background_body.png");
+        color: white;
+    }
+
+    .buttons {
+        /*display: flex;*/
+        /*align-items: flex-start;*/
+        /*margin-top: 20px;*/
+        /*margin-bottom: -30px;*/
+    }
+
+    .error{
+        margin-left: 30%;
+        margin-top: 20px;
+        font-size: 30px;
+        font-family: monospace;
     }
 }

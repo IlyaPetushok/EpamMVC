@@ -44,17 +44,21 @@
             </div>
 
             <div class="down">
-                <input class="one" type="email" name="email" required placeholder="email">
-                <div class=one>
+                <div class="bottom_image">
+                    <div class="email">
+                        <input class="one" type="email" name="email" required placeholder="email">
+                    </div>
+                    <div class=one>
 
-                    <div class="radio_buttons">
-                        <div>
-                            <input type="radio" name="sex" id="man" value="man" checked/>
-                            <label for="man">Мужской</label>
-                        </div>
-                        <div>
-                            <input type="radio" name="sex" id="woman" value="woman"/>
-                            <label for="woman">Женский</label>
+                        <div class="radio_buttons">
+                            <div>
+                                <input type="radio" name="sex" id="man" value="man" checked/>
+                                <label for="man">Мужской</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="sex" id="woman" value="woman"/>
+                                <label for="woman">Женский</label>
+                            </div>
                         </div>
                     </div>
 
@@ -78,10 +82,13 @@
         </div>
 
         <div class="buttons">
-            <label class="error">${error}</label>
-            <div  data-theme="dark" class="g-recaptcha"
+
+            <div data-theme="dark" class="g-recaptcha"
                  data-sitekey="6Lc2HJ0fAAAAAHP-iBmTualU2RfeUC2cIfBgJDAZ"
             ></div>
+            <br>
+            <label class="error">${error}</label>
+            <br>
             <%--        <a href="reg" class="button">Регистрация</a>--%>
             <input class="button" type="submit" value="Регистрация">
         </div>
