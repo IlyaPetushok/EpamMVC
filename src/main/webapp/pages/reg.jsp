@@ -16,7 +16,7 @@
     <script src='https://www.google.com/recaptcha/api.js?hl=en'></script>
 </head>
 <img class="one" src="<%=request.getContextPath()%>/resources/logGrsu.png">
-<form action="<%=request.getContextPath()%>/home">
+<form action="<%=request.getContextPath()%>/home" enctype="multipart/form-data" method="post">
     <fieldset>
         <legend>Регистрация</legend>
         <div class="all">
@@ -26,7 +26,7 @@
                         <label for="file-input">
                             <img class="two" src="<%=request.getContextPath()%>/resources/logAddPictureUser.png"/>
                         </label>
-                        <input id="file-input" type="file"/>
+                        <input id="file-input" type="file" name="photo_user" accept="image/png">
                     </div>
                 </div>
 
