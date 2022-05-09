@@ -33,7 +33,7 @@ public class CaptchaVerif {
             // Данные будут отправлены на Server.
             String postParams = "secret=" + SECRET_KEY + "&response=" + gRecaptchaResponse;
 
-            // Send Request
+            // Send Request отправка тела(true по умолч)
             conn.setDoOutput(true);
 
             // Получить Output Stream (Выходной поток) соединения к Server.
@@ -41,8 +41,8 @@ public class CaptchaVerif {
             OutputStream outStream = conn.getOutputStream();
             outStream.write(postParams.getBytes());
 
-            outStream.flush();
-            outStream.close();
+            outStream.flush();//сбросс данных
+            outStream.close();//finall
 
             // Получить Input Stream (Входной поток) Connection
             // чтобы прочитать данные отправленные от Server.
@@ -58,6 +58,8 @@ public class CaptchaVerif {
         } catch (Exception e) {
             e.printStackTrace();
             return false;
+        }finally {
+
         }
     }
 }

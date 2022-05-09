@@ -4,14 +4,14 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class Sha1 {
+public class Sha1 {//изменить название ver 3
     public Sha1() {
 
     }
     public String cipher(String password){
         MessageDigest sha1= null;
         try {
-            sha1 = MessageDigest.getInstance("SHA-1");
+            sha1 = MessageDigest.getInstance("SHA-1");//const
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
