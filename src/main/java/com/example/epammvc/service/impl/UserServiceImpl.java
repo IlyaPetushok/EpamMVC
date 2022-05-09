@@ -36,11 +36,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean registration(String name, String login, String password, String sex, String email, String data) throws ServiceException {
+    public boolean registration(String name, String login, String password, String sex, String email, String data,String photo) throws ServiceException {
         UserDaoImpl userDao = UserDaoImpl.getInstance();
         password = sha1.cipher(password);
         try {
-            return userDao.insert(new User(name, login, password, sex, email, data));
+            return userDao.insert(new User(name, login, password, sex, email, data, photo));
         } catch (DaoException exception) {
             throw new ServiceException("Mistake in authenticate service", exception);
         }

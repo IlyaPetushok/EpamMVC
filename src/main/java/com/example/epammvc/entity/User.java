@@ -8,6 +8,8 @@ public class User extends AbstractEntity{
     private String sex;
     private String data;
     private String email;
+    //
+    private String photo;
 
     public User(int id, String name, String sex, String data, String email) {
         this.id = id;
@@ -17,6 +19,15 @@ public class User extends AbstractEntity{
         this.email = email;
     }
 
+    public User(int id, String name, String sex, String data, String email, String photo) {
+        this.id = id;
+        this.name = name;
+        this.sex = sex;
+        this.data = data;
+        this.email = email;
+        this.photo = photo;
+    }
+
     public User(String name, String login, String password, String sex, String email, String data) {
         this.name = name;
         this.password = password;
@@ -24,6 +35,16 @@ public class User extends AbstractEntity{
         this.sex = sex;
         this.data = data;
         this.email = email;
+    }
+
+    public User(String name, String login, String password, String sex, String email, String data,String photo) {
+        this.name = name;
+        this.password = password;
+        this.login = login;
+        this.sex = sex;
+        this.data = data;
+        this.email = email;
+        this.photo=photo;
     }
 
     public int getId() {
@@ -80,5 +101,13 @@ public class User extends AbstractEntity{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 }

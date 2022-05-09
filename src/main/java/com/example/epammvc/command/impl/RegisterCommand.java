@@ -6,7 +6,15 @@ import com.example.epammvc.exception.CommandException;
 import com.example.epammvc.exception.ServiceException;
 import com.example.epammvc.security.CaptchaVerif;
 import com.example.epammvc.service.impl.UserServiceImpl;
+import com.example.epammvc.util.CustomPictureEncoder;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
+
+import java.io.IOException;
+
 
 public class RegisterCommand implements Command {
     private static final String NAME = "name";
@@ -17,7 +25,7 @@ public class RegisterCommand implements Command {
     private static final String DATA = "data";
 
     @Override
-    public Router execute(HttpServletRequest request) throws CommandException {
+    public Router execute(HttpServletRequest request, HttpServletResponse response) throws CommandException, IOException, ServletException {
         String page;
         String name = request.getParameter(NAME);
         String login = request.getParameter(LOGIN);
@@ -31,9 +39,14 @@ public class RegisterCommand implements Command {
             request.setAttribute("error", "Your need use captcha");
             page = "/pages/reg.jsp";
         } else {
+            Part filePart = request.getPart("photo_user");
+            String pictureName = filePart.getSubmittedFileName();
+            byte[] pictureBytes = filePart.getInputStream().readAllBytes();
+            String bytePicture = CustomPictureEncoder.arrayToBase64(pictureBytes);
+
             UserServiceImpl userService = UserServiceImpl.getInstance();
             try {
-                if (userService.registration(name, login, password, sex, email, data)) {
+                if (userService.registration(name, login, password, sex, email, data, bytePicture)) {
                     page = "/";
                 } else {
                     //add error on reg.html
@@ -44,6 +57,7 @@ public class RegisterCommand implements Command {
                 throw new CommandException("Error in registrationCommand", exception);
             }
         }
+
         Router router = new Router();
         router.setPage(page);
         return router;

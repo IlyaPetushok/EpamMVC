@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface UserService {
 
-    boolean registration(String name, String login, String password, String sex, String email, String data) throws DaoException, ServiceException;
+    boolean registration(String name, String login, String password, String sex, String email, String data,String photo) throws DaoException, ServiceException;
 
     User authorization(String login, String password) throws ServiceException;
 

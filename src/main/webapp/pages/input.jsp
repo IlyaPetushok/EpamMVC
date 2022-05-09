@@ -11,11 +11,15 @@
     <title>Title</title>
 </head>
 <body>
+    
     <h1>Hello </h1>
     <label>Name:</label>${name}
     <label>Sex:</label>${sex}
     <label>Email:</label>${email}
     <label>Data:</label>${data}
+    <br>
+
+    <img src="<%=request.getContextPath()%>${photo}">
     <form action="<%=request.getContextPath()%>/home">
         <input type="hidden" name="command" value="logout">
         <input type="submit" name="logout" value="Exit">
