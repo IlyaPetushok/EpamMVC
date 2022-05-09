@@ -28,19 +28,20 @@
         <location>/pages/error/error_404.jsp</location>
     </error-page>
     <error-page>
-<!-- реагирует на всё-->
+        <!-- реагирует на всё-->
         <exception-type>java.lang.Throwable</exception-type>
         <location>/pages/error/error_500.jsp</location>
     </error-page>
     <session-config>
         <session-timeout>10</session-timeout>
     </session-config>
-<!--    <servlet-mapping><font></font>-->
-<!--        <servlet-name>AuthorizationController</servlet-name><font></font>-->
-<!--        <url-pattern>/home</url-pattern><font></font>-->
-<!--    </servlet-mapping>-->
-<!--    <Context antiResourceLocking="false" privileged="true" >-->
-<!--        <Valve className="org.apache.catalina.valves.RemoteAddrValve"-->
-<!--               allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />-->
-<!--    </Context>-->
+
+    <!--    <servlet-mapping><font></font>-->
+    <!--        <servlet-name>AuthorizationController</servlet-name><font></font>-->
+    <!--        <url-pattern>/home</url-pattern><font></font>-->
+    <!--    </servlet-mapping>-->
+    <!--    <Context antiResourceLocking="false" privileged="true" >-->
+    <!--        <Valve className="org.apache.catalina.valves.RemoteAddrValve"-->
+    <!--               allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />-->
+    <!--    </Context>-->
 </web-app>
