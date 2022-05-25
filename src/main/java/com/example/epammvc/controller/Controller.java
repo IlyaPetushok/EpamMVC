@@ -5,6 +5,8 @@ import java.io.*;
 import com.example.epammvc.command.Command;
 import com.example.epammvc.command.CommandType;
 import com.example.epammvc.exception.CommandException;
+import com.example.epammvc.exception.DaoException;
+import com.example.epammvc.exception.ServiceException;
 import com.example.epammvc.pool.ConnectionBuilder;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
@@ -15,7 +17,7 @@ import org.apache.logging.log4j.Logger;
 @MultipartConfig
 @WebServlet(name = "helloServlet", value = "/home")
 public class Controller extends HttpServlet {
-    public static final String  COMMAND="command";
+    public static final String COMMAND = "command";
     public static final Logger logger = LogManager.getLogger(Controller.class.getName());
 
     public void init() {
@@ -28,7 +30,7 @@ public class Controller extends HttpServlet {
         String page = null;
         try {
             Router router = new Router();
-            router = command.execute(request,response);
+            router = command.execute(request, response);
 //            String type=router.getType();
             switch (router.getType()) {
                 case REDIRECT:
@@ -46,7 +48,7 @@ public class Controller extends HttpServlet {
             }
 //            request.getRequestDispatcher(page).forward(request,response);
 //            response.sendRedirect(request.getContextPath()+page);
-        } catch (CommandException exception) {
+        } catch (CommandException | ServiceException | DaoException exception) {
             request.setAttribute("error", exception);
             request.getRequestDispatcher("pages/error/error_500.jsp").forward(request, response);
             throw new ServletException(exception);
@@ -63,8 +65,8 @@ public class Controller extends HttpServlet {
         String page = null;
         try {
             Router router = new Router();
-            router = command.execute(request,response);
-//            String type=router.getType();
+            router = command.execute(request, response);
+
             switch (router.getType()) {
                 case REDIRECT:
                     response.sendRedirect(request.getContextPath() + router.getPage());
@@ -81,7 +83,7 @@ public class Controller extends HttpServlet {
             }
 //            request.getRequestDispatcher(page).forward(request,response);
 //            response.sendRedirect(request.getContextPath()+page);
-        } catch (CommandException exception) {
+        } catch (CommandException | ServiceException | DaoException exception) {
             request.setAttribute("error", exception);
             request.getRequestDispatcher("pages/error/error_500.jsp").forward(request, response);
             throw new ServletException(exception);

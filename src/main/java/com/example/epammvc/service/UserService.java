@@ -14,4 +14,11 @@ public interface UserService {
 
     User authorization(String login, String password) throws ServiceException;
 
+    List<User> searchUsers() throws ServiceException;
+
+    boolean addFriend(int idUser,int idFriend) throws ServiceException, DaoException;
+
+    List<User> searchFriend(int idUser) throws ServiceException, DaoException;
+
+    boolean sendMessage(int idUser,int idFriend,String message) throws ServiceException, DaoException;
 }

@@ -45,4 +45,27 @@ public class UserServiceImpl implements UserService {
             throw new ServiceException("Mistake in authenticate service", exception);
         }
     }
+
+    public List<User> searchUsers(){
+        UserDaoImpl userDao =UserDaoImpl.getInstance();
+        return userDao.findAll();
+    }
+
+    @Override
+    public boolean addFriend(int idUser, int idFriend) throws ServiceException, DaoException {
+        UserDaoImpl userDao=UserDaoImpl.getInstance();
+        return userDao.addFriend(idUser,idFriend);
+    }
+
+    @Override
+    public List<User> searchFriend(int idUser) throws ServiceException, DaoException {
+        UserDaoImpl userDao =UserDaoImpl.getInstance();
+        return userDao.findFriend(idUser);
+    }
+
+    @Override
+    public boolean sendMessage(int idUser, int idFriend, String message) throws ServiceException, DaoException {
+        UserDaoImpl userDao =UserDaoImpl.getInstance();
+        return userDao.sendMessage(idUser,idFriend,message);
+    }
 }

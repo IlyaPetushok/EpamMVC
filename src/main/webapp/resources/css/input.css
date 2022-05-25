@@ -7,12 +7,57 @@ div.data_user{
     width: 60%;
     margin: 5% 20% 5% 20%;
     padding: 20px 30px 20px 30px;
-    height: 75%;
+    height: 57%;
     background-color: white;
+}
+div.flex{
+    /*border-style: solid;*/
+    /*border-width: 3px;*/
+    display: flex;
+    align-items: flex-start;
+}
+
+.photo_border{
+    width: 30%;
+    height: 30%;
 }
 
 img.photo_user{
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-bottom: 5%;
     border-radius: 5px;
-    width: 30%;
-    height: auto;
+    /*width: 30%;*/
+    margin-right: 5%;
+    /*height: auto;*/
+    /*подключить снизу*/
+    border-radius: 5px;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+p{
+    margin-left: 10%;
+    font-size: 17px;
+    font-family: monospace;
+}
+
+div.up_right{
+    width: 100%;
+    /*margin-top: 3%;*/
+    /*height: 30%;*/
+    display: block;
+    float: left;
+}
+
+div.footer{
+    display: flex;
+    align-items: flex-start;
+    position: fixed; /* Фиксированное положение */
+    left: 0;
+    bottom: 0; /* Левый нижний угол */
+    width: 100%;
+    padding: 10px;
+    background-color: white;
 }

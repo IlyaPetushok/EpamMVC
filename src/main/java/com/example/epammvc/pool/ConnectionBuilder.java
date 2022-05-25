@@ -35,6 +35,21 @@ public class ConnectionBuilder {
         }
     }
 
+    public static ConnectionBuilder getInstance() {
+        if (instance == null) {
+            while (isInstanceInitialized.compareAndSet(false, true)) {
+                instance = new ConnectionBuilder();
+                initializingLatch.countDown();
+            }
+            try {
+                initializingLatch.await();
+            } catch (InterruptedException exception) {
+                //LOGGER
+            }
+        }
+        return instance;
+    }
+
     private ConnectionBuilder() {
         Connection connection = null;
         for (int i = 0; i < CAPACITY; i++) {
@@ -84,20 +99,6 @@ public class ConnectionBuilder {
 
     }
 
-    public static ConnectionBuilder getInstance() {
-        if (instance == null) {
-            while (isInstanceInitialized.compareAndSet(false, true)) {
-                instance = new ConnectionBuilder();
-                initializingLatch.countDown();
-            }
-            try {
-                initializingLatch.await();
-            } catch (InterruptedException exception) {
-                //LOGGER
-            }
-        }
-        return instance;
-    }
 
     private Properties loadProperties() {
         Properties properties = new Properties();

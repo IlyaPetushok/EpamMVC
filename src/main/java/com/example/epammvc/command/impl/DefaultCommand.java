@@ -10,6 +10,7 @@ public class DefaultCommand implements Command {
 
     @Override
     public Router execute(HttpServletRequest request, HttpServletResponse response) {
+        String page=null;
         Router router=new Router();
         router.setPage(HOMEPAGE);
         return router;

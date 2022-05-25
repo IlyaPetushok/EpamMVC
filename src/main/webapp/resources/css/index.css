@@ -6,11 +6,11 @@ input.one::-webkit-input-placeholder {
     color: white;
 }
 
-@media only screen and (max-width: 1600px) and (min-width: 1151px) {
+@media only screen and (max-width: 1700px) and (min-width: 1151px) {
     img.one {
         position: relative;
-        width: 400px;
-        height: 390px;
+        width: 420px;
+        height: 410px;
         top: 190px;
         left: 150px;
     }
@@ -18,8 +18,8 @@ input.one::-webkit-input-placeholder {
     form {
         position: relative;
         float: right;
-        width: 374px;
-        height: 364px;
+        width: 394px;
+        height: 384px;
         right: 150px;
         top: 205px;
         border-radius: 20px;
@@ -342,5 +342,3 @@ input.one::-webkit-input-placeholder {
         color:white;
     }
 }
-
-

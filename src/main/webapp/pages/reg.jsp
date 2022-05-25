@@ -65,7 +65,7 @@
                 </div>
                 <div class=two>
                     <select class=one name=data>
-                        <option value=month>
+                        <option value=2002-06-18>
                             День
                         </option>
                     </select>

@@ -18,13 +18,28 @@
     <center>
         <h1>Добро Пожаловать</h1>
     </center>
-    <img class="photo_user" src="<%=request.getContextPath()%>${photo}">
-    <label>Name:${name}</label>
-    <label>Sex:${sex}</label>
-    <label>Email:${email}</label>
-    <label>Data:${data}</label>
-    <br>
-
+    <div class="flex">
+        <div class="photo_border">
+            <img class="photo_user" src="<%=request.getContextPath()%>${photo}">
+        </div>
+        <div class="up_right">
+            <p>Name</p>
+            <p>&nbsp&nbsp&nbsp&nbsp${name}</p>
+            <p>Sex</p>
+            <p>&nbsp&nbsp&nbsp&nbsp${sex}</p>
+            <p>Email</p>
+            <p>&nbsp&nbsp&nbsp&nbsp${email}</p>
+            <p>Date</p>
+            <p>&nbsp&nbsp&nbsp&nbsp${data}</p>
+        </div>
+        <br>
+    </div>
+</div>
+<div class="footer">
+    <form action="<%=request.getContextPath()%>/home">
+        <input type="hidden" name="command" value="myfriend">
+        <input type="submit" name="friend" value="friend">
+    </form>
     <form action="<%=request.getContextPath()%>/home">
         <input type="hidden" name="command" value="logout">
         <input type="submit" name="logout" value="Exit">

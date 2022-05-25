@@ -1,15 +1,16 @@
 package com.example.epammvc.command;
 
-import com.example.epammvc.command.impl.AuthorizationCommand;
-import com.example.epammvc.command.impl.DefaultCommand;
-import com.example.epammvc.command.impl.LogoutCommand;
-import com.example.epammvc.command.impl.RegisterCommand;
+import com.example.epammvc.command.impl.*;
 
 public enum CommandType {
     ADD_USER(new RegisterCommand()),
     INPUT_USER(new AuthorizationCommand()),
     DEFAULT(new DefaultCommand()),
-    LOGOUT(new LogoutCommand());
+    LOGOUT(new LogoutCommand()),
+    MYFRIEND(new FindFriendCommand()),
+    SEARCH_FRIEND(new FindUsersCommand()),
+    ADD_FRIEND(new AddFriendCommand()),
+    SEND_MESSAGE(new SendMessageCommand());
 
     Command command;
 

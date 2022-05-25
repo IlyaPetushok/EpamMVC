@@ -8,7 +8,6 @@ public class User extends AbstractEntity{
     private String sex;
     private String data;
     private String email;
-    //
     private String photo;
 
     public User(int id, String name, String sex, String data, String email) {
@@ -45,6 +44,12 @@ public class User extends AbstractEntity{
         this.data = data;
         this.email = email;
         this.photo=photo;
+    }
+
+    public User(int id, String name, String photo) {
+        this.id = id;
+        this.name = name;
+        this.photo = photo;
     }
 
     public int getId() {

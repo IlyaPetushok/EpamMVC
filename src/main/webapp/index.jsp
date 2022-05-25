@@ -20,7 +20,7 @@
         <input class=one type=password name="password" required=required
                placeholder="Пароль">
         <br>
-        <label>${error}</label>
+        <label>${error_aut}</label>
         <br>
         <input class=two type="submit" value="Войти">
         <br>

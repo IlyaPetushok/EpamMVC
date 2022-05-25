@@ -14,11 +14,9 @@ import jakarta.servlet.http.HttpSession;
 import org.apache.logging.log4j.core.util.FileUtils;
 
 import javax.imageio.ImageIO;
+import javax.imageio.stream.ImageOutputStream;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 
 public class AuthorizationCommand implements Command {
@@ -46,6 +44,7 @@ public class AuthorizationCommand implements Command {
         //для тобо чтобы знать с какой страницы пришли
         session.setAttribute("current_page", page);
         if (user.getId() != 0) {
+            session.setAttribute("id",user.getId());
             session.setAttribute(NAME, user.getName());
             session.setAttribute(SEX, user.getSex());
             session.setAttribute(EMAIL, user.getEmail());
@@ -57,7 +56,7 @@ public class AuthorizationCommand implements Command {
             session.setAttribute("photo","/resources/photo/user/photo_user"+user.getId()+".png");//"<img src=<%=request.getContextPath()%>"+pathPhotoUser+"photo_user"+user.getId()+".png>");
             page = "/pages/input.jsp";
         } else {
-            session.setAttribute("error", "Wrong login or password");
+            session.setAttribute("error_aut", "Wrong login or password");
             page = "/index.jsp";
         }
         Router router=new Router();
